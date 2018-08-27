@@ -41,7 +41,7 @@ public class Micro2Application {
 			@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "4"),
 			@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "75"),
 			@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000") })
-	@RequestMapping(value = "/getMili2", method = RequestMethod.GET)
+	@RequestMapping(value = "/getMili2", method = RequestMethod.GET, produces = "application/text")
 	@ResponseBody
 	public long getMili2() {
 		System.out.println(new Date().getSeconds() + ": Trying to reach 8003");
